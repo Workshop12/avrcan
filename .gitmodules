@@ -1,0 +1,3 @@
+[submodule "libraries/avr_can"]
+	path = libraries/avr_can
+	url = https://github.com/thomasonw/avr_can.git
