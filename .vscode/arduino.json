@@ -1,0 +1,6 @@
+{
+    "configuration": "variant=64m1,PSC=OFF,clock=16MHz_external",
+    "board": "ATmegaM1-C1:avr:ATmegaxxM1/C1",
+    "sketch": "CAN_TrafficSnooper\\CAN_TrafficSnooper.ino",
+    "port": "COM5"
+}
