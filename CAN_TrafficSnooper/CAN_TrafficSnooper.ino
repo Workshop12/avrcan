@@ -151,6 +151,7 @@ void showHelp()
   Serial.println("F: Clear the filter");
   Serial.println("s: Solo the given value");
   Serial.println("S: Clear the solo list");
+  Serial.println("l: Log a manual message");
   Serial.println("?: Show this incredibly detailed help");
 }
 
@@ -175,12 +176,14 @@ void readAndSet(const char* name, IntList<uint32_t>& list) {
   Serial.print(name);
   Serial.print(": ");
   String value = readString();
+  Serial.println();
   if (value.length() == 0) {
     // do nothing
   } else {
     uint32_t valueInt = strtol(value.c_str(), nullptr, 16);
     list.addValue(valueInt);
-    Serial.print("Adding to ");
+    Serial.print(timeStamp(millis()));
+    Serial.print(" Adding to ");
     Serial.print(name);
     Serial.print(" 0x");
     Serial.print(valueInt, 16);
@@ -213,6 +216,13 @@ void loop() {
       readAndSet("SOLO", solo);
     } else if (c == 'f') {
       readAndSet("FILTER", filter);
+    } else if (c == 'l') {
+      Serial.print("Log> ");
+      String toLog(readString());
+      Serial.println();
+      Serial.print(timeStamp(millis()));
+      Serial.print(" LOG ");
+      Serial.println(toLog);
     } else {
       Serial.print("Unknown command: ");
       Serial.println((char)c);
