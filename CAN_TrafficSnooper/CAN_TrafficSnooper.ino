@@ -129,7 +129,7 @@ void printFrame(CAN_FRAME& frame)
   Serial.print(" Data: 0x");
   for (int count = 0; count < frame.length; count++) {
     char buffer[4];
-    sprintf(buffer,"%02X", frame.data.bytes[count]);
+    sprintf(buffer, "%02X", frame.data.bytes[count]);
     Serial.print(buffer);
     Serial.print(" ");
   }
