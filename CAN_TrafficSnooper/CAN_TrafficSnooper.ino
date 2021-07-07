@@ -1,6 +1,7 @@
 // Arduino ATmegaxxM1 - Displays all traffic found on canbus port
 // By Thibaut Viard/Wilfredo Molina/Collin Kidder 2013-2014
 //  Modified by Al Thomason for ATmegaxxM1 avr_CAN demo 2016
+//  modified by Workshop 12 for 'menu' driven sniffing.
 
 // Required libraries
 #include <avr_can.h>
